@@ -1,32 +1,27 @@
 import './App.scss';
-import { next, prev } from './redux/actions/GraphActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useReducer } from 'react';
 import { FetchPosts, FetchSinglePosts } from './redux/actions/PostsActions';
 
-
 function App() {
-
   const dispatch = useDispatch()
-  const graphData = useSelector(state => state.GraphReducer)
-
-  // useEffect(() => {
-  //   (
-  //     async () => {
-
-  //       await dispatch()
-  //       await dispatch()
-  //     }
-  //   )()
-  // }, [])
-
+  const postsReducer = useSelector(state => state.postsReducer)
+  const posts = Object.entries(postsReducer.list).map(x => x[1])
 
   return (
-    <div className="App" style={{marginTop: '40%'}}>
-      <button onClick={ () => dispatch(FetchPosts()) }>Get list</button>
-      <br />
-      <button onClick={ () => dispatch(FetchSinglePosts(1)) }>Get details</button>
-    </div>
+    <>
+      <div>
+        {posts.forEach(element => (
+          element.userId  
+        ))}
+      </div>
+
+        <div className="App" style={{marginTop: '40%'}}>
+          <button onClick={ () => dispatch(FetchPosts()) }>Get list</button>
+          <br />
+          <button onClick={ () => dispatch(FetchSinglePosts(1)) }>Get details</button>
+        </div>
+    </>
+
   );
 }
 
