@@ -1,15 +1,18 @@
 import axios from "axios";
 
 
-const examplApi = axios.create({
+export const exampleApi = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com',
-    params: {}
+    params: {
+
+    }
 })
 
-examplApi.interceptors.request.use(
+exampleApi.interceptors.request.use(
     request => {
         // condition logic here
         if(false) {
+            // logic
         }
         console.log('JHello')
         return request;
@@ -19,5 +22,3 @@ examplApi.interceptors.request.use(
     }
 
 );
-
-export default examplApi;

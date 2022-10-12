@@ -4,14 +4,14 @@ const initialState = {
 
 const GraphReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'prev':
-            
+        case 'graph/prev':
+
             return { ...state, id: --state.id}
 
-        case 'next':
-        
-            return { ...state, id: ++state.id}            
-    
+        case 'graph/next':
+
+            return { ...state, id: ++state.id}
+
         default:
             return state
     }

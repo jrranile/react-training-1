@@ -1,13 +1,16 @@
 export const next = () => async dispatch => {
+    // API call
+
+
     dispatch({
-        type: 'next',
+        type: 'graph/next',
         payload: []
     })
 }
 
 export const prev = () => async dispatch => {
     dispatch({
-        type: 'prev',
+        type: 'graph/prev',
         payload: []
     })
 }
