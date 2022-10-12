@@ -1,10 +1,12 @@
 import './App.scss';
 import { next, prev } from './actions/GraphActions';
 import { useDispatch } from 'react-redux';
+import myApi from './api';
 
 function App() {
 
   const dispatch = useDispatch()
+  myApi.get('/posts')
 
   return (
     <div className="App" style={{marginTop: '40%'}}>
